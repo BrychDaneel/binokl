@@ -1,0 +1,92 @@
+object Main: TMain
+  Left = 276
+  Height = 413
+  Top = 265
+  Width = 679
+  Caption = 'Binokl'
+  ClientHeight = 413
+  ClientWidth = 679
+  OnCreate = FormCreate
+  LCLVersion = '1.2.6.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 34
+    Top = 0
+    Width = 679
+    Align = alTop
+    Caption = 'Panel1'
+    ClientHeight = 34
+    ClientWidth = 679
+    TabOrder = 0
+    object GoBitBtn: TBitBtn
+      Left = 632
+      Height = 32
+      Top = 1
+      Width = 46
+      Align = alRight
+      Caption = 'GoBitBtn'
+      OnClick = GoBitBtnClick
+      TabOrder = 0
+    end
+    object URLEdit: TEdit
+      Left = 1
+      Height = 32
+      Top = 1
+      Width = 631
+      Align = alClient
+      TabOrder = 1
+      Text = '/home/daneel/fpc/lazarus/Binokl/Проба/test.hsml'
+    end
+  end
+  object GLSceneViewer1: TGLSceneViewer
+    Left = 0
+    Height = 379
+    Top = 34
+    Width = 679
+    Camera = GlMainCamera
+    Buffer.BackgroundColor = clBlack
+    FieldOfView = 150.4384765625
+    Align = alClient
+    OnClick = GLSceneViewer1Click
+    OnKeyDown = GLSceneViewer1KeyDown
+    OnKeyUp = GLSceneViewer1KeyUp
+    OnMouseWheel = GLSceneViewer1MouseWheel
+    TabOrder = 1
+  end
+  object GLSceneee: TGLScene
+    left = 568
+    top = 64
+    object world: TGLDummyCube
+      TagFloat = 0
+      PitchAngle = 0
+      RollAngle = 0
+      TurnAngle = 0
+      CubeSize = 1
+      object GlMainCamera: TGLCamera
+        TagFloat = 0
+        DepthOfView = 100
+        FocalLength = 50
+      end
+    end
+  end
+  object GLCadencer1: TGLCadencer
+    Scene = GLSceneee
+    MaxDeltaTime = 0
+    MinDeltaTime = 0
+    FixedDeltaTime = 0
+    OnProgress = GLCadencer1Progress
+    left = 568
+    top = 144
+  end
+  object GLMaterialLibrary1: TGLMaterialLibrary
+    left = 376
+    top = 64
+  end
+  object GLNavigator1: TGLNavigator
+    MovingObject = GlMainCamera
+    MaxAngle = 0
+    MinAngle = 0
+    left = 376
+    top = 152
+  end
+end

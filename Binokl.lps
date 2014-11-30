@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="12">
+      <Unit0>
+        <Filename Value="Binokl.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="Binokl"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="60" Y="10"/>
+        <UsageCount Value="26"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="face.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="Main"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="face"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="30" Y="22"/>
+        <UsageCount Value="26"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="cacher.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="cacher"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="96"/>
+        <CursorPos X="1" Y="128"/>
+        <UsageCount Value="26"/>
+        <Loaded Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="pagereader.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="pagereader"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="5"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="942"/>
+        <CursorPos X="94" Y="957"/>
+        <UsageCount Value="26"/>
+        <Loaded Value="True"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="creator.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="creator"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="4"/>
+        <CursorPos X="48" Y="21"/>
+        <UsageCount Value="26"/>
+        <Loaded Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="../../lib/indy-10.2.0.3/fpc/IdStackUnix.pas"/>
+        <UnitName Value="IdStackUnix"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="397"/>
+        <CursorPos X="34" Y="403"/>
+        <UsageCount Value="12"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="/usr/share/lazarus/1.2.6/lcl/include/control.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="3252"/>
+        <CursorPos X="1" Y="3269"/>
+        <UsageCount Value="10"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="../../lib/indy-10.2.0.3/fpc/IdHTTP.pas"/>
+        <UnitName Value="IdHTTP"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1088"/>
+        <CursorPos X="20" Y="1091"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="/usr/share/lazarus/1.2.6/components/lazutils/fileutil.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="587"/>
+        <CursorPos X="41" Y="602"/>
+        <UsageCount Value="10"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="/usr/share/lazarus/1.2.6/components/lazutils/unixlazfileutils.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="11"/>
+        <UsageCount Value="10"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="/usr/share/lazarus/1.2.6/components/lazutils/lazutf8.pas"/>
+        <UnitName Value="LazUTF8"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="193"/>
+        <CursorPos X="1" Y="217"/>
+        <UsageCount Value="10"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="../../lib/GLScene/Source/GLNavigator.pas"/>
+        <UnitName Value="GLNavigator"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="256"/>
+        <CursorPos X="47" Y="280"/>
+        <UsageCount Value="11"/>
+        <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit11>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="30" HistoryIndex="29">
+      <Position1>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="66" Column="1" TopLine="40"/>
+      </Position1>
+      <Position2>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="67" Column="1" TopLine="40"/>
+      </Position2>
+      <Position3>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="68" Column="1" TopLine="40"/>
+      </Position3>
+      <Position4>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="153" Column="1" TopLine="136"/>
+      </Position4>
+      <Position5>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="157" Column="1" TopLine="136"/>
+      </Position5>
+      <Position6>
+        <Filename Value="face.pas"/>
+        <Caret Line="74" Column="1" TopLine="58"/>
+      </Position6>
+      <Position7>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="152" Column="36" TopLine="124"/>
+      </Position7>
+      <Position8>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="115" Column="62" TopLine="96"/>
+      </Position8>
+      <Position9>
+        <Filename Value="face.pas"/>
+        <Caret Line="77" Column="1" TopLine="46"/>
+      </Position9>
+      <Position10>
+        <Filename Value="face.pas"/>
+        <Caret Line="23" Column="1" TopLine="1"/>
+      </Position10>
+      <Position11>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="270" Column="48" TopLine="92"/>
+      </Position11>
+      <Position12>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="116" Column="1" TopLine="92"/>
+      </Position12>
+      <Position13>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="118" Column="1" TopLine="92"/>
+      </Position13>
+      <Position14>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="158" Column="1" TopLine="129"/>
+      </Position14>
+      <Position15>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="111" Column="50" TopLine="96"/>
+      </Position15>
+      <Position16>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="103" Column="1" TopLine="96"/>
+      </Position16>
+      <Position17>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="104" Column="1" TopLine="96"/>
+      </Position17>
+      <Position18>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="105" Column="1" TopLine="96"/>
+      </Position18>
+      <Position19>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="107" Column="1" TopLine="96"/>
+      </Position19>
+      <Position20>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="116" Column="1" TopLine="96"/>
+      </Position20>
+      <Position21>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="118" Column="1" TopLine="96"/>
+      </Position21>
+      <Position22>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="158" Column="1" TopLine="141"/>
+      </Position22>
+      <Position23>
+        <Filename Value="face.pas"/>
+        <Caret Line="89" Column="53" TopLine="61"/>
+      </Position23>
+      <Position24>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="119" Column="28" TopLine="107"/>
+      </Position24>
+      <Position25>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="116" Column="1" TopLine="107"/>
+      </Position25>
+      <Position26>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="118" Column="1" TopLine="107"/>
+      </Position26>
+      <Position27>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="158" Column="1" TopLine="141"/>
+      </Position27>
+      <Position28>
+        <Filename Value="face.pas"/>
+        <Caret Line="89" Column="53" TopLine="1"/>
+      </Position28>
+      <Position29>
+        <Filename Value="face.pas"/>
+        <Caret Line="22" Column="30" TopLine="4"/>
+      </Position29>
+      <Position30>
+        <Filename Value="cacher.pas"/>
+        <Caret Line="115" Column="38" TopLine="96"/>
+      </Position30>
+    </JumpHistory>
+  </ProjectSession>
+  <EditorMacros Count="0"/>
+</CONFIG>
