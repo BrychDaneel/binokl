@@ -1,4 +1,4 @@
-binokl
+Binokl
 ======
 
 3D browser
