@@ -67,7 +67,7 @@ begin
   CorrectURL(s);
   URLEdit.Text := s;
  // clearCache;
-  OflineMode:=true;
+ // OflineMode:=true;
   page := (addfile(URLEdit.Text));
 
   if page = 'error' then
@@ -80,13 +80,13 @@ begin
   begin
     s := com.CreatorMM[i - 1];
     ShowMessage(s);
-    if (pos('LOADMODEL', com.CreatorMM[i - 1]) <> 0) or
-      (pos('TEXTURE', com.CreatorMM[i - 1]) <> 0) then
+    If  pos('*$',s)<>0 then
     begin
       n := copy(s, pos('$', s) + 1, length(s) - pos('$', s));
       Delete(s, pos('$', s) + 1, length(s) - pos('$', s));
+      delete(s,length(s)-1,1);
       n := addfile(n);
-      if n = '440:440' then
+      if n = 'eror' then
         Continue
       else
         Glrequre(s + n);
@@ -95,7 +95,7 @@ begin
       Glrequre(s);
   end;
 
-   OflineMode:=false;
+ //  OflineMode:=false;
 
   if not GLSceneViewer1.Focused then
     GLSceneViewer1.SetFocus;

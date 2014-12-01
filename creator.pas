@@ -99,7 +99,7 @@ begin
 
   if (pos('TEXTURE', s) <> 0) and (th is TGLSceneObject) then
   begin
-        TGLFreeForm(q).Material.Texture.Disabled := False;
+        TGLSceneObject(q).Material.Texture.Disabled := False;
     (th as TGLSceneObject).Material.Texture.Image.LoadFromFile(
       copy(s, pos('$', s) + 1, length(s) - pos('$', s)));
   end;

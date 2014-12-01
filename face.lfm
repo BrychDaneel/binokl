@@ -1,7 +1,7 @@
 object Main: TMain
-  Left = 276
+  Left = 1114
   Height = 413
-  Top = 265
+  Top = 259
   Width = 679
   Caption = 'Binokl'
   ClientHeight = 413
@@ -17,6 +17,7 @@ object Main: TMain
     Caption = 'Panel1'
     ClientHeight = 34
     ClientWidth = 679
+    ParentColor = False
     TabOrder = 0
     object GoBitBtn: TBitBtn
       Left = 632
@@ -35,7 +36,7 @@ object Main: TMain
       Width = 631
       Align = alClient
       TabOrder = 1
-      Text = '/home/daneel/fpc/lazarus/Binokl/Проба/test.hsml'
+      Text = '/home/daneel/fpc/lazarus/Binokl/samples/test.hsml'
     end
   end
   object GLSceneViewer1: TGLSceneViewer

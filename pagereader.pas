@@ -59,163 +59,6 @@ end;
 
 end;
 
-procedure decodeOpenteg(s: string);
-var
-  iii: longint;
-  ss, sss: string;
-  q:real;
-begin
-  if pos('TEXTURE', s) <> 0 then
-  begin
-    if pos('$', s) <> 0 then
-      Delete(s, 1, pos('$', s) - 1);
-    while s[1] = '$' do
-    begin
-      Delete(s, 1, 1);
-      ss := copy(s, 1, pos('=', s) - 1);
-      Delete(s, 1, pos('=', s));
-      if pos('$', s) <> 0 then
-      begin
-        sss := copy(s, 1, pos('$', s) - 1);
-        Delete(s, 1, pos('$', s) - 1);
-      end
-      else
-        sss := s;
-
-      if ss = 'src' then
-        ouut.CreatorMM.Add('TEXTURE$' + sss);
-    end;
-
-  end else
-
-if pos('ROTATION', s) <> 0 then
-  begin
-    if pos('$', s) <> 0 then
-      Delete(s, 1, pos('$', s) - 1);
-    while s[1] = '$' do
-    begin
-      Delete(s, 1, 1);
-      ss := copy(s, 1, pos('=', s) - 1);
-      Delete(s, 1, pos('=', s));
-      if pos('$', s) <> 0 then
-      begin
-        sss := copy(s, 1, pos('$', s) - 1);
-        Delete(s, 1, pos('$', s) - 1);
-      end
-      else
-        sss := s;
-
-      if ss = 'x' then
-      try
-        q:=StrToFloat(sss);
-      finally
-              ouut.CreatorMM.Add('ROTX$' + sss);
-      end;
-
-      if ss = 'y' then
-      try
-        q:=StrToFloat(sss);
-      finally
-              ouut.CreatorMM.Add('ROTY$' + sss);
-      end;
-
-      if ss = 'z' then
-      try
-        q:=StrToFloat(sss);
-      finally
-              ouut.CreatorMM.Add('ROTZ$' + sss);
-      end;
-    end;
-
-  end else
-
-
-if pos('SCALE', s) <> 0 then
-  begin
-    if pos('$', s) <> 0 then
-      Delete(s, 1, pos('$', s) - 1);
-    while s[1] = '$' do
-    begin
-      Delete(s, 1, 1);
-      ss := copy(s, 1, pos('=', s) - 1);
-      Delete(s, 1, pos('=', s));
-      if pos('$', s) <> 0 then
-      begin
-        sss := copy(s, 1, pos('$', s) - 1);
-        Delete(s, 1, pos('$', s) - 1);
-      end
-      else
-        sss := s;
-
-      if ss = 'x' then
-      try
-        q:=StrToFloat(sss);
-      finally
-              ouut.CreatorMM.Add('SCLX$' + sss);
-      end;
-
-      if ss = 'y' then
-      try
-        q:=StrToFloat(sss);
-      finally
-              ouut.CreatorMM.Add('SCLY$' + sss);
-      end;
-
-      if ss = 'z' then
-      try
-        q:=StrToFloat(sss);
-      finally
-              ouut.CreatorMM.Add('SCLZ$' + sss);
-      end;
-    end;
-
-  end else
-
-
-if pos('POSITION', s) <> 0 then
-  begin
-    if pos('$', s) <> 0 then
-      Delete(s, 1, pos('$', s) - 1);
-    while s[1] = '$' do
-    begin
-      Delete(s, 1, 1);
-      ss := copy(s, 1, pos('=', s) - 1);
-      Delete(s, 1, pos('=', s));
-      if pos('$', s) <> 0 then
-      begin
-        sss := copy(s, 1, pos('$', s) - 1);
-        Delete(s, 1, pos('$', s) - 1);
-      end
-      else
-        sss := s;
-
-      if ss = 'x' then
-      try
-        q:=StrToFloat(sss);
-      finally
-              ouut.CreatorMM.Add('SETX$' + sss);
-      end;
-
-      if ss = 'y' then
-      try
-        q:=StrToFloat(sss);
-      finally
-              ouut.CreatorMM.Add('SETY$' + sss);
-      end;
-
-      if ss = 'z' then
-      try
-        q:=StrToFloat(sss);
-      finally
-              ouut.CreatorMM.Add('SETZ$' + sss);
-      end;
-    end;
-
-  end;
-
-
-
-end;
 
 function CheckTeg(s, teg: string): boolean;
 begin
@@ -385,95 +228,6 @@ begin
         ii := ii + length('/world');
       end
       else
-      if CheckTeg(s, 'model') then
-      begin
-        sost := 2;
-        pr.Clear;
-        vl.Clear;
-        teg := 'model';
-        ii := ii + length('model');
-      end
-      else
-      if CheckTeg(s, 'light') then
-      begin
-        sost := 2;
-        pr.Clear;
-        vl.Clear;
-        teg := 'light';
-        ii := ii + length('light');
-      end
-      else
-      if CheckTeg(s, 'texture') then
-      begin
-        sost := 2;
-        pr.Clear;
-        vl.Clear;
-        teg := 'texture';
-        ii := ii + length('texture');
-      end
-      else
-      if CheckTeg(s, 'position') then
-      begin
-        sost := 2;
-        pr.Clear;
-        vl.Clear;
-        teg := 'position';
-        ii := ii + length('position');
-      end
-      else
-      if CheckTeg(s, 'scale') then
-      begin
-        sost := 2;
-        pr.Clear;
-        vl.Clear;
-        teg := 'scale';
-        ii := ii + length('scale');
-      end
-      else
-      if CheckTeg(s, 'rotation') then
-      begin
-        sost := 2;
-        pr.Clear;
-        vl.Clear;
-        teg := 'rotation';
-        ii := ii + length('rotation');
-      end
-      else
-            if CheckTeg(s, '/position') then
-      begin
-        sost := 2;
-        pr.Clear;
-        vl.Clear;
-        teg := '/position';
-        ii := ii + length('/position');
-      end
-      else
-      if CheckTeg(s, '/scale') then
-      begin
-        sost := 2;
-        pr.Clear;
-        vl.Clear;
-        teg := '/scale';
-        ii := ii + length('/scale');
-      end
-      else
-      if CheckTeg(s, '/rotation') then
-      begin
-        sost := 2;
-        pr.Clear;
-        vl.Clear;
-        teg := '/rotation';
-        ii := ii + length('/rotation');
-      end
-      else
-      if CheckTeg(s, '/texture') then
-      begin
-        sost := 2;
-        pr.Clear;
-        vl.Clear;
-        teg := '/texture';
-        ii := ii + length('/texture');
-      end else
       IF CheckAllTeg(s,qq) then
       begin
         sost := 2;
@@ -500,47 +254,6 @@ begin
         Dec(ii)
       else
       begin
-        if ((teg = 'model') or (teg = 'texture')) and (s = 'src') then
-           begin
-           param := s;
-           sost := 3;
-           end;
-        if ((teg = 'light') or (teg='model')) and (s = 'posy') then
-           begin
-           param := s;
-           sost := 3;
-           end;
-        if ((teg = 'light') or (teg='model')) and (s = 'posx') then
-           begin
-           param := s;
-           sost := 3;
-           end;
-        if ((teg = 'light') or (teg='model')) and (s = 'posz') then
-           begin
-           param := s;
-           sost := 3;
-           end;
-        if ((teg = 'light')) and (s = 'power') then
-           begin
-           param := s;
-           sost := 3;
-           end;
-        if ((teg = 'position') or (teg='rotation') or (teg='scale')) and (s = 'x') then
-           begin
-           param := s;
-           sost := 3;
-           end;
-        if ((teg = 'position') or (teg='rotation') or (teg='scale')) and (s = 'y') then
-           begin
-           param := s;
-           sost := 3;
-           end;
-        if ((teg = 'position') or (teg='rotation') or (teg='scale')) and (s = 'z') then
-           begin
-           param := s;
-           sost := 3;
-           end;
-
         if teggi.Find(teg,qq) then
         If teggi.par[qq].Find(s,qqq) and (sost<>3) then
         begin
@@ -638,226 +351,7 @@ begin
         else
           sost := 1;
 
-      if (teg = 'model') then
-      begin
-        sost := 1;
-        if (sp = 2) then
-        begin
-          ouut.CreatorMM.Add('ADDMODEL');
-          for iii := 1 to pr.Count do
-          begin
-            if pr[iii - 1] = 'src' then
-              ouut.CreatorMM.Add('LOADMODEL$' + vl[iii - 1]);
-
-            if pr[iii - 1] = 'posy' then
-              try
-                q := StrToFloat(vl[iii - 1]);
-              finally
-                ouut.CreatorMM.Add('SETY$' + vl[iii - 1]);
-              end;
-            if pr[iii - 1] = 'posz' then
-              try
-                q := StrToFloat(vl[iii - 1]);
-              finally
-                ouut.CreatorMM.Add('SETZ$' + vl[iii - 1]);
-              end;
-            if pr[iii - 1] = 'posx' then
-              try
-                q := StrToFloat(vl[iii - 1]);
-              finally
-                ouut.CreatorMM.Add('SETX$' + vl[iii - 1]);
-              end;
-
-          end;
-
-          for iii := openTeg.Count downto 1 do
-          begin
-            if pos('TEXTURE', openTeg[iii - 1]) <> 0 then
-              decodeOpenteg(openTeg[iii - 1]);
-            if pos('POSITION', openTeg[iii - 1]) <> 0 then
-              decodeOpenteg(openTeg[iii - 1]);
-            if pos('ROTATION', openTeg[iii - 1]) <> 0 then
-              decodeOpenteg(openTeg[iii - 1]);
-            if pos('SCALE', openTeg[iii - 1]) <> 0 then
-              decodeOpenteg(openTeg[iii - 1]);
-          end;
-
-          ouut.CreatorMM.Add('UP');
-        end;
-      end;
-
-      if (teg = 'light') then
-      begin
-        sost := 1;
-        if (sp = 2) then
-        begin
-          ouut.CreatorMM.Add('ADDLIGHT');
-          for iii := 1 to pr.Count do
-          begin
-            if pr[iii - 1] = 'posy' then
-              try
-                q := StrToFloat(vl[iii - 1]);
-              finally
-                ouut.CreatorMM.Add('SETY$' + vl[iii - 1]);
-              end;
-            if pr[iii - 1] = 'posz' then
-              try
-                q := StrToFloat(vl[iii - 1]);
-              finally
-                ouut.CreatorMM.Add('SETZ$' + vl[iii - 1]);
-              end;
-            if pr[iii - 1] = 'posx' then
-              try
-                q := StrToFloat(vl[iii - 1]);
-              finally
-                ouut.CreatorMM.Add('SETX$' + vl[iii - 1]);
-              end;
-            if pr[iii - 1] = 'power' then
-              try
-                q := StrToFloat(vl[iii - 1]);
-              finally
-                ouut.CreatorMM.Add('SETPOWER$' + vl[iii - 1]);
-              end;
-          end;
-
-          for iii := openTeg.Count downto 1 do
-          begin
-            if pos('POSITION', openTeg[iii - 1]) <> 0 then
-              decodeOpenteg(openTeg[iii - 1]);
-          end;
-          ouut.CreatorMM.Add('UP');
-        end;
-      end;
-
-
-      if (teg = 'texture') then
-      begin
-        sost := 1;
-        if (sp = 2) then
-        begin
-          s := 'TEXTURE';
-          for iii := 1 to pr.Count do
-          begin
-            if pr[iii - 1] = 'src' then
-              s := s + '$' + 'src=' + vl[iii - 1];
-          end;
-          openTeg.Add(s);
-        end;
-
-      end;
-
-      if (teg = 'position') then
-      begin
-        sost := 1;
-        if (sp = 2) then
-        begin
-          s := 'POSITION';
-          for iii := 1 to pr.Count do
-          begin
-            if pr[iii - 1] = 'x' then
-              s := s + '$' + 'x=' + vl[iii - 1];
-            if pr[iii - 1] = 'y' then
-              s := s + '$' + 'y=' + vl[iii - 1];
-            if pr[iii - 1] = 'z' then
-              s := s + '$' + 'z=' + vl[iii - 1];
-          end;
-          openTeg.Add(s);
-        end;
-      end;
-
-    if (teg = 'rotation') then
-      begin
-        sost := 1;
-        if (sp = 2) then
-        begin
-          s := 'ROTATION';
-          for iii := 1 to pr.Count do
-          begin
-            if pr[iii - 1] = 'x' then
-              s := s + '$' + 'x=' + vl[iii - 1];
-            if pr[iii - 1] = 'y' then
-              s := s + '$' + 'y=' + vl[iii - 1];
-            if pr[iii - 1] = 'z' then
-              s := s + '$' + 'z=' + vl[iii - 1];
-          end;
-          openTeg.Add(s);
-        end;
-      end;
-
-      if (teg = 'scale') then
-      begin
-        sost := 1;
-        if (sp = 2) then
-        begin
-          s := 'SCALE';
-          for iii := 1 to pr.Count do
-          begin
-            if pr[iii - 1] = 'x' then
-              s := s + '$' + 'x=' + vl[iii - 1];
-            if pr[iii - 1] = 'y' then
-              s := s + '$' + 'y=' + vl[iii - 1];
-            if pr[iii - 1] = 'z' then
-              s := s + '$' + 'z=' + vl[iii - 1];
-          end;
-          openTeg.Add(s);
-        end;
-      end;
-
-      if (teg = '/texture') then
-      begin
-        sost := 1;
-        if (sp = 2) then
-        begin
-          iii := openTeg.Count - 1;
-          while (iii >= 0) and (pos('TEXTURE', openTeg[iii]) = 0) do
-            Dec(iii);
-          if (pos('TEXTURE', openTeg[iii]) <> 0) then
-            openTeg.Delete(iii);
-        end;
-      end;
-
-      if (teg = '/rotation') then
-      begin
-        sost := 1;
-        if (sp = 2) then
-        begin
-          iii := openTeg.Count - 1;
-          while (iii > 0) and (pos('ROTATION', openTeg[iii]) = 0) do
-            Dec(iii);
-          if (pos('ROTATION', openTeg[iii]) <> 0) then
-            openTeg.Delete(iii);
-        end;
-      end;
-
-    if (teg = '/scale') then
-      begin
-        sost := 1;
-        if (sp = 2) then
-        begin
-          iii := openTeg.Count - 1;
-          while (iii > 0) and (pos('SCALE', openTeg[iii]) = 0) do
-            Dec(iii);
-          if (pos('SCALE', openTeg[iii]) <> 0) then
-            openTeg.Delete(iii);
-        end;
-      end;
-
-    if (teg = '/position') then
-      begin
-        sost := 1;
-        if (sp = 2) then
-        begin
-          iii := openTeg.Count - 1;
-          while (iii > 0) and (pos('POSITION', openTeg[iii]) = 0) do
-            Dec(iii);
-          if (pos('POSITION', openTeg[iii]) <> 0) then
-            openTeg.Delete(iii);
-        end;
-      end;
-
-
-
-    if (teggi.Find(teg,qq)) then
+      if (teggi.Find(teg,qq)) then
       begin
         sost := 1;
         if (sp = teggi.needlevl[qq]) and (not teggi.open[qq]) and (not teggi.clos[qq]) then
@@ -871,6 +365,7 @@ begin
                    for iii := 1 to pr.Count do
                    begin
                      If teggi.par[qq].Find(pr[iii - 1],qqq) then
+                       begin
                        if teggi.typpar[qq][qqq]=2 then
                        try
                          q := StrToFloat(vl[iii - 1]);
@@ -879,7 +374,11 @@ begin
                           If pos('$',teggi.parcom[qq][qqq][iv-1])=0 then ouut.CreatorMM.Add(teggi.parcom[qq][qqq][iv-1]) else
                          ouut.CreatorMM.Add(teggi.parcom[qq][qqq][iv-1] + vl[iii - 1]);
                        end;
-                   end;
+                    if teggi.typpar[qq][qqq]=3 then
+                   For iv:=1 to teggi.parcom[qq][qqq].Count do
+                          If pos('$',teggi.parcom[qq][qqq][iv-1])=0 then ouut.CreatorMM.Add(teggi.parcom[qq][qqq][iv-1]) else  ouut.CreatorMM.Add(copy(teggi.parcom[qq][qqq][iv-1],1,length(teggi.parcom[qq][qqq][iv-1])-1)+'*'+teggi.parcom[qq][qqq][iv-1][length(teggi.parcom[qq][qqq][iv-1])]+vl[iii-1]);  //параметр может значить несколько мнемокодов
+                        end;
+                    end;
 
 
                  For iii:=1 to teggi.post[qq].Count do ouut.CreatorMM.Add(teggi.post[qq][iii-1]);
@@ -898,8 +397,12 @@ begin
                          q := StrToFloat(vl[iii - 1]);
                        finally
                          For iv:=1 to teggi.parcom[qq][qqq].Count do
-                          If pos('$',teggi.parcom[qq][qqq][iv-1])=0 then s:=s+'"'+teggi.parcom[qq][qqq][iv-1]+'"' else s:=s+'"'+teggi.parcom[qq][qqq][iv-1]+vl[iii-1]+'"'
+                          If pos('$',teggi.parcom[qq][qqq][iv-1])=0 then s:=s+'"'+teggi.parcom[qq][qqq][iv-1]+'"' else s:=s+'"'+teggi.parcom[qq][qqq][iv-1]+vl[iii-1]+'"'  //параметр может значить несколько мнемокодов
                        end;
+                if teggi.typpar[qq][qqq]=3 then
+                       For iv:=1 to teggi.parcom[qq][qqq].Count do
+                          If pos('$',teggi.parcom[qq][qqq][iv-1])=0 then s:=s+'"'+teggi.parcom[qq][qqq][iv-1]+'"' else s:=s+'"'+copy(teggi.parcom[qq][qqq][iv-1],1,length(teggi.parcom[qq][qqq][iv-1])-1)+'*'+teggi.parcom[qq][qqq][iv-1][length(teggi.parcom[qq][qqq][iv-1])]+vl[iii-1]+'"'  //параметр может значить несколько мнемокодов
+
           end;
         openTeg.Add(s);
         end;
@@ -929,108 +432,13 @@ var t:text;
 initialization
 teggi:=Tteg.Create;
 
-teggi.Add('box');  //тег
-setlength(teggi.open,teggi.Count);
-setlength(teggi.clos,teggi.Count);
-setlength(teggi.pre,teggi.Count);
-teggi.pre[teggi.Count-1]:=TStringList.Create;
-setlength(teggi.post,teggi.Count);
-teggi.post[teggi.Count-1]:=TStringList.Create;
-setlength(teggi.opentegallow,teggi.Count);
-teggi.opentegallow[teggi.Count-1]:=TStringList.Create;
-setlength(teggi.needlevl,teggi.Count);
-teggi.open[teggi.Count-1]:=false;  //открывающийся
-teggi.clos[teggi.Count-1]:=false;  //закрывающийся
-teggi.needlevl[teggi.Count-1]:=2; //пространство
-teggi.pre[teggi.Count-1].Add('ADDBOX');   //До параметров
-teggi.post[teggi.Count-1].Add('UP');      //После параметров
-teggi.opentegallow[teggi.Count-1].Add('rotating');
-setlength(teggi.parcom,teggi.Count);
-setlength(teggi.par,teggi.Count);
-teggi.par[teggi.Count-1]:=TStringList.Create;
-setlength(teggi.typpar,teggi.Count);
-
-
-teggi.par[teggi.Count-1].Add('width'); //параметр
-setlength(teggi.typpar[teggi.Count-1],teggi.par[teggi.Count-1].Count);
-setlength(teggi.parcom[teggi.Count-1],teggi.par[teggi.Count-1].Count);
-teggi.parcom[teggi.Count-1][teggi.par[teggi.Count-1].Count-1]:=TStringList.Create;
-teggi.typpar[teggi.Count-1][teggi.par[teggi.Count-1].Count-1]:=2;
-teggi.parcom[teggi.Count-1][teggi.par[teggi.Count-1].Count-1].Add('SETW$');
-
-
-
-
-
-
-teggi.Add('rotate');  //тег
-setlength(teggi.open,teggi.Count);
-setlength(teggi.clos,teggi.Count);
-setlength(teggi.pre,teggi.Count);
-teggi.pre[teggi.Count-1]:=TStringList.Create;
-setlength(teggi.post,teggi.Count);
-teggi.post[teggi.Count-1]:=TStringList.Create;
-setlength(teggi.opentegallow,teggi.Count);
-teggi.opentegallow[teggi.Count-1]:=TStringList.Create;
-setlength(teggi.needlevl,teggi.Count);
-teggi.open[teggi.Count-1]:=true;  //открывающийся
-teggi.clos[teggi.Count-1]:=false;  //закрывающийся
-teggi.needlevl[teggi.Count-1]:=2; //пространство
-setlength(teggi.parcom,teggi.Count);
-setlength(teggi.par,teggi.Count);
-teggi.par[teggi.Count-1]:=TStringList.Create;
-setlength(teggi.typpar,teggi.Count);
-
-
-teggi.par[teggi.Count-1].Add('x'); //параметр
-setlength(teggi.typpar[teggi.Count-1],teggi.par[teggi.Count-1].Count);
-setlength(teggi.parcom[teggi.Count-1],teggi.par[teggi.Count-1].Count);
-teggi.parcom[teggi.Count-1][teggi.par[teggi.Count-1].Count-1]:=TStringList.Create;
-teggi.typpar[teggi.Count-1][teggi.par[teggi.Count-1].Count-1]:=2;
-teggi.parcom[teggi.Count-1][teggi.par[teggi.Count-1].Count-1].Add('ROTATEX$');
-
-teggi.par[teggi.Count-1].Add('y'); //параметр
-setlength(teggi.typpar[teggi.Count-1],teggi.par[teggi.Count-1].Count);
-setlength(teggi.parcom[teggi.Count-1],teggi.par[teggi.Count-1].Count);
-teggi.parcom[teggi.Count-1][teggi.par[teggi.Count-1].Count-1]:=TStringList.Create;
-teggi.typpar[teggi.Count-1][teggi.par[teggi.Count-1].Count-1]:=2;
-teggi.parcom[teggi.Count-1][teggi.par[teggi.Count-1].Count-1].Add('ROTATEY$');
-
-teggi.par[teggi.Count-1].Add('z'); //параметр
-setlength(teggi.typpar[teggi.Count-1],teggi.par[teggi.Count-1].Count);
-setlength(teggi.parcom[teggi.Count-1],teggi.par[teggi.Count-1].Count);
-teggi.parcom[teggi.Count-1][teggi.par[teggi.Count-1].Count-1]:=TStringList.Create;
-teggi.typpar[teggi.Count-1][teggi.par[teggi.Count-1].Count-1]:=2;
-teggi.parcom[teggi.Count-1][teggi.par[teggi.Count-1].Count-1].Add('ROTATEZ$');
-
-teggi.Add('/rotate');  //тег
-setlength(teggi.open,teggi.Count);
-setlength(teggi.clos,teggi.Count);
-setlength(teggi.pre,teggi.Count);
-teggi.pre[teggi.Count-1]:=TStringList.Create;
-setlength(teggi.post,teggi.Count);
-teggi.post[teggi.Count-1]:=TStringList.Create;
-setlength(teggi.opentegallow,teggi.Count);
-teggi.opentegallow[teggi.Count-1]:=TStringList.Create;
-setlength(teggi.needlevl,teggi.Count);
-teggi.open[teggi.Count-1]:=false;  //открывающийся
-teggi.clos[teggi.Count-1]:=true;  //закрывающийся
-teggi.needlevl[teggi.Count-1]:=2; //пространство
-setlength(teggi.parcom,teggi.Count);
-setlength(teggi.par,teggi.Count);
-teggi.par[teggi.Count-1]:=TStringList.Create;
-setlength(teggi.typpar,teggi.Count);
-setlength(teggi.paraforclos,teggi.Count);
-teggi.paraforclos[teggi.Count-1]:='ratate';
-
-
 Assign(t,ExtractFilePath(ParamStr(0))+'teggi.conf');
 reset(t);
 readln(t,n);
 for i:=1 to n do
 begin
   readln(t,s);
-  teggi.Add(s);  //тег
+  teggi.Add(lowercase(s));  //тег
 
   setlength(teggi.open,teggi.Count);
   setlength(teggi.clos,teggi.Count);
@@ -1057,7 +465,7 @@ begin
   teggi.paraforclos[teggi.Count-1]:=s;  //ПАРА для закр
   end;
   readln(t,q);
-  teggi.needlevl[teggi.Count-1]:=q; //пространство
+  teggi.needlevl[teggi.Count-1]:=q; //пространство   space=0 world=2
 
   readln(t,nn);          //PRE
   for ii:=1 to nn do
@@ -1073,14 +481,14 @@ begin
   teggi.post[teggi.Count-1].Add(s);
   end;
 
-  readln(t,nn);     // OpenTAG
+  readln(t,nn);     // OpenTagAllow
   for ii:=1 to nn do
   begin
   readln(t,s);
   teggi.opentegallow[teggi.Count-1].Add(s);
   end;
 
-  readln(t,nn);      //теги
+  readln(t,nn);      //параметр
   for ii:=1 to nn  do
   begin
   readln(t,s);
@@ -1090,10 +498,10 @@ setlength(teggi.typpar[teggi.Count-1],teggi.par[teggi.Count-1].Count);
 setlength(teggi.parcom[teggi.Count-1],teggi.par[teggi.Count-1].Count);
 teggi.parcom[teggi.Count-1][teggi.par[teggi.Count-1].Count-1]:=TStringList.Create;
 
-readln(t,q);  //тип 2=real
+readln(t,q);  //тип 2=real  3=файл
 teggi.typpar[teggi.Count-1][teggi.par[teggi.Count-1].Count-1]:=q;
 
-readln(t,nnn);     //команды
+readln(t,nnn);     //команды       $=применить параметр
 for iii:=1 to nnn do
 begin
 readln(t,s);

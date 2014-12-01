@@ -8,11 +8,11 @@
         <Filename Value="Binokl.lpr"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="Binokl"/>
-        <EditorIndex Value="4"/>
+        <EditorIndex Value="3"/>
         <WindowIndex Value="0"/>
         <TopLine Value="1"/>
-        <CursorPos X="60" Y="10"/>
-        <UsageCount Value="26"/>
+        <CursorPos X="37" Y="12"/>
+        <UsageCount Value="29"/>
         <Loaded Value="True"/>
       </Unit0>
       <Unit1>
@@ -24,9 +24,9 @@
         <UnitName Value="face"/>
         <EditorIndex Value="0"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="1"/>
-        <CursorPos X="30" Y="22"/>
-        <UsageCount Value="26"/>
+        <TopLine Value="79"/>
+        <CursorPos X="31" Y="87"/>
+        <UsageCount Value="29"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit1>
@@ -36,9 +36,9 @@
         <UnitName Value="cacher"/>
         <EditorIndex Value="1"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="96"/>
-        <CursorPos X="1" Y="128"/>
-        <UsageCount Value="26"/>
+        <TopLine Value="242"/>
+        <CursorPos X="48" Y="37"/>
+        <UsageCount Value="29"/>
         <Loaded Value="True"/>
       </Unit2>
       <Unit3>
@@ -46,22 +46,22 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="pagereader"/>
         <IsVisibleTab Value="True"/>
-        <EditorIndex Value="5"/>
+        <EditorIndex Value="4"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="942"/>
-        <CursorPos X="94" Y="957"/>
-        <UsageCount Value="26"/>
+        <TopLine Value="164"/>
+        <CursorPos X="37" Y="177"/>
+        <UsageCount Value="29"/>
         <Loaded Value="True"/>
       </Unit3>
       <Unit4>
         <Filename Value="creator.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="creator"/>
-        <EditorIndex Value="3"/>
+        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
-        <TopLine Value="4"/>
-        <CursorPos X="48" Y="21"/>
-        <UsageCount Value="26"/>
+        <TopLine Value="68"/>
+        <CursorPos X="95" Y="93"/>
+        <UsageCount Value="29"/>
         <Loaded Value="True"/>
       </Unit4>
       <Unit5>
@@ -114,12 +114,10 @@
       <Unit11>
         <Filename Value="../../lib/GLScene/Source/GLNavigator.pas"/>
         <UnitName Value="GLNavigator"/>
-        <EditorIndex Value="2"/>
         <WindowIndex Value="0"/>
         <TopLine Value="256"/>
         <CursorPos X="47" Y="280"/>
         <UsageCount Value="11"/>
-        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit11>
     </Units>
@@ -128,126 +126,151 @@
     </General>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="66" Column="1" TopLine="40"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="190" Column="1" TopLine="161"/>
       </Position1>
       <Position2>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="67" Column="1" TopLine="40"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="244" Column="1" TopLine="226"/>
       </Position2>
       <Position3>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="68" Column="1" TopLine="40"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="269" Column="1" TopLine="251"/>
       </Position3>
       <Position4>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="153" Column="1" TopLine="136"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="309" Column="1" TopLine="291"/>
       </Position4>
       <Position5>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="157" Column="1" TopLine="136"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="326" Column="1" TopLine="297"/>
       </Position5>
       <Position6>
-        <Filename Value="face.pas"/>
-        <Caret Line="74" Column="1" TopLine="58"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="179" Column="1" TopLine="161"/>
       </Position6>
       <Position7>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="152" Column="36" TopLine="124"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="181" Column="1" TopLine="161"/>
       </Position7>
       <Position8>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="115" Column="62" TopLine="96"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="182" Column="1" TopLine="161"/>
       </Position8>
       <Position9>
-        <Filename Value="face.pas"/>
-        <Caret Line="77" Column="1" TopLine="46"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="190" Column="1" TopLine="161"/>
       </Position9>
       <Position10>
-        <Filename Value="face.pas"/>
-        <Caret Line="23" Column="1" TopLine="1"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="244" Column="1" TopLine="226"/>
       </Position10>
       <Position11>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="270" Column="48" TopLine="92"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="269" Column="1" TopLine="251"/>
       </Position11>
       <Position12>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="116" Column="1" TopLine="92"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="309" Column="1" TopLine="291"/>
       </Position12>
       <Position13>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="118" Column="1" TopLine="92"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="326" Column="1" TopLine="297"/>
       </Position13>
       <Position14>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="158" Column="1" TopLine="129"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="179" Column="1" TopLine="161"/>
       </Position14>
       <Position15>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="111" Column="50" TopLine="96"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="181" Column="1" TopLine="161"/>
       </Position15>
       <Position16>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="103" Column="1" TopLine="96"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="182" Column="1" TopLine="161"/>
       </Position16>
       <Position17>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="104" Column="1" TopLine="96"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="190" Column="1" TopLine="161"/>
       </Position17>
       <Position18>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="105" Column="1" TopLine="96"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="379" Column="25" TopLine="160"/>
       </Position18>
       <Position19>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="107" Column="1" TopLine="96"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="180" Column="41" TopLine="160"/>
       </Position19>
       <Position20>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="116" Column="1" TopLine="96"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="182" Column="1" TopLine="160"/>
       </Position20>
       <Position21>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="118" Column="1" TopLine="96"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="190" Column="1" TopLine="161"/>
       </Position21>
       <Position22>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="158" Column="1" TopLine="141"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="192" Column="1" TopLine="163"/>
       </Position22>
       <Position23>
-        <Filename Value="face.pas"/>
-        <Caret Line="89" Column="53" TopLine="61"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="181" Column="1" TopLine="163"/>
       </Position23>
       <Position24>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="119" Column="28" TopLine="107"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="182" Column="1" TopLine="163"/>
       </Position24>
       <Position25>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="116" Column="1" TopLine="107"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="183" Column="1" TopLine="163"/>
       </Position25>
       <Position26>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="118" Column="1" TopLine="107"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="185" Column="1" TopLine="163"/>
       </Position26>
       <Position27>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="158" Column="1" TopLine="141"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="186" Column="1" TopLine="163"/>
       </Position27>
       <Position28>
-        <Filename Value="face.pas"/>
-        <Caret Line="89" Column="53" TopLine="1"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="190" Column="1" TopLine="163"/>
       </Position28>
       <Position29>
-        <Filename Value="face.pas"/>
-        <Caret Line="22" Column="30" TopLine="4"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="192" Column="1" TopLine="163"/>
       </Position29>
       <Position30>
-        <Filename Value="cacher.pas"/>
-        <Caret Line="115" Column="38" TopLine="96"/>
+        <Filename Value="pagereader.pas"/>
+        <Caret Line="193" Column="1" TopLine="164"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="3">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="pagereader.pas"/>
+        <Line Value="369"/>
+      </Item1>
+      <Item2>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="pagereader.pas"/>
+        <Line Value="395"/>
+      </Item2>
+      <Item3>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="pagereader.pas"/>
+        <Line Value="181"/>
+      </Item3>
+    </BreakPoints>
+  </Debugging>
   <EditorMacros Count="0"/>
 </CONFIG>

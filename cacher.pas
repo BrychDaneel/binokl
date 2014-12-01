@@ -111,7 +111,6 @@ var
     s:string;
     stream:TFileStream;
 begin
-//If not IpFileDataProvider.CheckURL (URL) then begin addfile:='error:440'; exit; end;
 s:=URLtoName(URL);
 If s<>'440:440' then
 begin
@@ -258,12 +257,7 @@ begin
 readln(t,s);
 If s='' then Continue;
 while s[1]=' ' do delete(s,1,1);
-{If pos('$',s)<2 THEN continue;
-ss:=copy(s,1,pos('$',s)-1);
-delete(s,1,pos('$',s)-1);
-while ss[length(ss)]=' ' do delete(ss,length(ss),1);
-while s[1]=' ' do delete(s,1,1);
-while s[length(s)]=' ' do delete(s,length(s),1);      }
+
 If pos(' $ ',s)<2 then continue;
 ss:=copy(s,1,pos(' $ ',s)-1);
 while ss[length(ss)]=' ' do delete(ss,length(ss),1);
