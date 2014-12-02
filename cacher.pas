@@ -18,7 +18,7 @@ procedure CorrectURL(var URL:string);
 
 //procedure autoremove;
 var currectchar:set of char;
-    OflineMode:boolean;
+    OflineMode:boolean=false;
     MaxCacheTime:TDateTime;
     MaxCacheSize:longint;
 implementation
@@ -161,7 +161,7 @@ var i:longint;
 url,s:String;
     stream:TFileStream;
 begin
-url:=UrlToName(name);
+url:=NameToURL(name);
 For i:=1 to FileList.leng do if FileList.List[i].name=name then
 begin
 FileList.List[i].UseTime:=now;
@@ -190,7 +190,6 @@ try
  {$ELSE}
  CopyFile(copy(URL,9,length(URL)-8),GetCurrentDir+'/'+name);
  {$ENDIF}
- CopyFile(copy(URL,8,length(URL)-8),name);
 finally
 updatefile:='OK';
 end;

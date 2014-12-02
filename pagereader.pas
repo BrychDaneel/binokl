@@ -21,6 +21,7 @@ type Tteg=class(TStringList)
   public pre,post,opentegallow:array of TStringList;
   parcom:array of array of TStringList;
   needlevl:array of longint;
+  postlevl:array of longint;
   open,clos:array of boolean;
   paraforclos:array of string;
   par:array of TStringList;
@@ -116,6 +117,7 @@ begin
   openTeg := TStringList.Create;
 
   Text.LoadFromFile(filename);
+ //  text.SaveToFile('pagereaderIN.txt');
   i := 1;
   while i <= Text.Count do
   begin
@@ -169,12 +171,12 @@ begin
       Text.Delete(i - 1);
     Inc(I);
   end;
-//  text.SaveToFile('asd.txt');
+//  text.SaveToFile('pagereaderOUT.txt');
   sost := 0;
   i := 1;
   ii:=0;
   sost := 0;
-  sp := -1;
+  sp := 0;
 
   while (sost >= 0) do
   begin
@@ -192,42 +194,6 @@ begin
       s := copy(Text[i - 1], ii + 1, length(Text[i - 1]) - ii);
       s := LowerCase(s);
 
-      if CheckTeg(s, '/space') then
-      begin
-        sost := 2;
-        pr.Clear;
-        vl.Clear;
-        teg := '/space';
-        ii := ii + length('/space');
-      end
-      else
-       if CheckTeg(s, 'space') then
-      begin
-        sost := 2;
-        pr.Clear;
-        vl.Clear;
-        teg := 'space';
-        ii := ii + length('space');
-      end
-      else
-      if CheckTeg(s, 'world') then
-      begin
-        sost := 2;
-        pr.Clear;
-        vl.Clear;
-        teg := 'world';
-        ii := ii + length('world');
-      end
-      else
-      if CheckTeg(s, '/world') then
-      begin
-        sost := 2;
-        pr.Clear;
-        vl.Clear;
-        teg := '/world';
-        ii := ii + length('/world');
-      end
-      else
       IF CheckAllTeg(s,qq) then
       begin
         sost := 2;
@@ -325,32 +291,6 @@ begin
 
     if (sost >= 2) and (Text[i - 1][ii] = '>') then
     begin
-      if teg = '/space' then
-        sost := -1;
-      if teg = 'space' then
-         begin
-        sost := 0;
-        sp:=0;
-         end;
-
-      if (teg = 'world') then
-        if (sp = 0) then
-        begin
-          sp := 2;
-          sost := 1;
-        end
-        else
-          sost := 1;
-
-      if (teg = '/world') then
-        if (sp = 2) then
-        begin
-          sp := 0;
-          sost := 1;
-        end
-        else
-          sost := 1;
-
       if (teggi.Find(teg,qq)) then
       begin
         sost := 1;
@@ -382,6 +322,8 @@ begin
 
 
                  For iii:=1 to teggi.post[qq].Count do ouut.CreatorMM.Add(teggi.post[qq][iii-1]);
+
+                 sp:=teggi.postlevl[qq];
                  end;
 
 
@@ -405,12 +347,14 @@ begin
 
           end;
         openTeg.Add(s);
+        sp:=teggi.postlevl[qq];
         end;
 
         If (sp = teggi.needlevl[qq]) and (teggi.clos[qq]) then
         begin
         For iii:=openTeg.Count downto 1 do
              if copy(openTeg[iii - 1],1,pos('$',openTeg[iii - 1])-1)=teggi[qq] then begin openTeg.Delete(qq); Break; end;
+        sp:=teggi.postlevl[qq];
         end;
       end;
 
@@ -449,6 +393,7 @@ begin
   setlength(teggi.opentegallow,teggi.Count);
   teggi.opentegallow[teggi.Count-1]:=TStringList.Create;
   setlength(teggi.needlevl,teggi.Count);
+  setlength(teggi.postlevl,teggi.Count);
   setlength(teggi.parcom,teggi.Count);
   setlength(teggi.par,teggi.Count);
   teggi.par[teggi.Count-1]:=TStringList.Create;
@@ -466,6 +411,9 @@ begin
   end;
   readln(t,q);
   teggi.needlevl[teggi.Count-1]:=q; //пространство   space=0 world=2
+
+  readln(t,q);
+  teggi.postlevl[teggi.Count-1]:=q; //Постпространство   space=0 world=2
 
   readln(t,nn);          //PRE
   for ii:=1 to nn do
