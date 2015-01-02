@@ -2,7 +2,10 @@
 <head>
 </head>
 <world>
-<box with=3>
-<light posz=3>
+<box with=3 y=2>
+<light z=3>
+<light z=20 power=10>
+<plane width=30 height=30 texture="http://img15.nnm.ru/7/2/e/f/f/5c0bae4e4892984e65a2dbd0bd2.jpg">
+<sphere radius=3>
 </world>
 </space>

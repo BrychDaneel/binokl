@@ -42,7 +42,6 @@ begin
   if s = 'ADDMODEL' then
   begin
     q := TGLFreeForm.CreateAsChild(th);
-    TGLFreeForm(q).Material.Texture.TextureMode := tmModulate;
     th := q;
   end;
 
@@ -66,6 +65,19 @@ begin
   if s = 'ADDBOX' then
   begin
     q := TGLCube.CreateAsChild(th);
+    th := q;
+  end;
+
+   if s = 'ADDSPHERE' then
+  begin
+    q := TGLSphere.CreateAsChild(th);
+    TGLSphere(q).Normals:=nsSmooth;
+    th := q;
+  end;
+
+  if s = 'ADDPLANE' then
+  begin
+    q := TGLPlane.CreateAsChild(th);
     th := q;
   end;
 
@@ -93,12 +105,25 @@ begin
 
     if  (pos('SETW', s)<> 0) and (th Is TGLCube) then
       TGLCube(th).CubeWidth:= StrToFloat(getpar(s));
+        if  (pos('SETH', s)<> 0) and (th Is TGLCube) then
+      TGLCube(th).CubeHeight:= StrToFloat(getpar(s));
+        if  (pos('SETD', s)<> 0) and (th Is TGLCube) then
+      TGLCube(th).CubeDepth:= StrToFloat(getpar(s));
+
+        if  (pos('SETRADIUS', s)<> 0) and (th Is TGLSphere) then
+      TGLSphere(th).Radius:= StrToFloat(getpar(s));
+
+    if  (pos('SETW', s)<> 0) and (th Is TGLPlane) then
+      TGLPlane(th).Width:= StrToFloat(getpar(s));
+        if  (pos('SETH', s)<> 0) and (th Is TGLPlane) then
+      TGLPlane(th).Height:= StrToFloat(getpar(s));
 
    If (pos('SETPOWER$', s)<>0) and (th is TGLLightSource) then
       TGLLightSource(th).ConstAttenuation:=1/(StrToFloat(copy(s, pos('$', s) + 1, length(s) - pos('$', s))));
 
   if (pos('TEXTURE', s) <> 0) and (th is TGLSceneObject) then
   begin
+    TGLSceneObject(q).Material.Texture.TextureMode := tmModulate;
         TGLSceneObject(q).Material.Texture.Disabled := False;
     (th as TGLSceneObject).Material.Texture.Image.LoadFromFile(
       copy(s, pos('$', s) + 1, length(s) - pos('$', s)));

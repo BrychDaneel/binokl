@@ -1,35 +1,42 @@
 object Form1: TForm1
-  Left = 353
+  Left = 267
   Height = 546
-  Top = 0
+  Top = 244
   Width = 582
   Caption = 'Form1'
-  ClientHeight = 523
+  ClientHeight = 528
   ClientWidth = 582
   Menu = MainMenu1
   LCLVersion = '1.2.6.0'
   object Panel1: TPanel
     Left = 0
-    Height = 523
+    Height = 528
     Top = 0
     Width = 266
     Align = alLeft
     Caption = 'Panel1'
-    ClientHeight = 523
+    ClientHeight = 528
     ClientWidth = 266
     TabOrder = 0
     object TreeView1: TTreeView
       Left = 1
-      Height = 471
+      Height = 476
       Top = 1
       Width = 264
       Align = alClient
+      DefaultItemHeight = 16
       TabOrder = 0
+      OnChange = TreeView1Change
+      OnChanging = TreeView1Changing
+      OnEdited = TreeView1Edited
+      OnEditing = TreeView1Editing
+      OnKeyPress = TreeView1KeyPress
+      OnSelectionChanged = TreeView1SelectionChanged
     end
     object Panel3: TPanel
       Left = 1
       Height = 50
-      Top = 472
+      Top = 477
       Width = 264
       Align = alBottom
       Caption = 'Panel3'
@@ -52,26 +59,27 @@ object Form1: TForm1
         Top = 1
         Width = 107
         Align = alRight
-        Caption = 'Button3'
+        Caption = 'Удалить'
         TabOrder = 1
       end
     end
   end
   object Panel2: TPanel
     Left = 266
-    Height = 523
+    Height = 528
     Top = 0
     Width = 316
     Align = alClient
-    ClientHeight = 523
+    ClientHeight = 528
     ClientWidth = 316
     TabOrder = 1
     object CheckBox1: TCheckBox
       Left = 2
-      Height = 24
+      Height = 26
       Top = 16
-      Width = 82
+      Width = 76
       Caption = 'Парный'
+      OnChange = CheckBox1Change
       TabOrder = 0
     end
     object Memo1: TMemo
@@ -79,21 +87,25 @@ object Form1: TForm1
       Height = 90
       Top = 72
       Width = 174
+      Lines.Strings = (
+        'ADDBOX'
+      )
+      OnChange = Memo1Change
       TabOrder = 1
     end
     object Label1: TLabel
       Left = 1
-      Height = 17
+      Height = 14
       Top = 56
-      Width = 176
+      Width = 152
       Caption = 'Команды до параметров'
       ParentColor = False
     end
     object Label2: TLabel
       Left = 3
-      Height = 17
-      Top = 184
-      Width = 81
+      Height = 14
+      Top = 168
+      Width = 69
       Caption = 'Параметры'
       ParentColor = False
     end
@@ -103,72 +115,53 @@ object Form1: TForm1
       Top = 272
       Width = 174
       Lines.Strings = (
-        'Memo2'
+        'LOAD$'
       )
+      OnChange = Memo2Change
       TabOrder = 2
     end
     object ComboBox1: TComboBox
-      Left = -1
-      Height = 29
-      Top = 207
-      Width = 111
+      Left = -2
+      Height = 20
+      Top = 184
+      Width = 129
       ItemHeight = 0
+      OnChange = ComboBox1Change
+      OnChangeBounds = ComboBox1ChangeBounds
+      OnKeyPress = ComboBox1KeyPress
+      OnSelect = ComboBox1Select
       TabOrder = 3
-      Text = 'src'
     end
     object Button2: TButton
-      Left = 104
-      Height = 29
-      Top = 207
-      Width = 68
-      Caption = 'Добавить'
+      Left = 128
+      Height = 23
+      Top = 184
+      Width = 24
+      Caption = '+'
       OnClick = Button2Click
       TabOrder = 4
     end
     object Label3: TLabel
       Left = 16
-      Height = 17
+      Height = 14
       Top = 240
-      Width = 25
+      Width = 23
       Caption = 'Тип'
       ParentColor = False
     end
-    object ComboBox2: TComboBox
-      Left = 56
-      Height = 27
-      Top = 240
-      Width = 124
-      ItemHeight = 0
-      ItemIndex = 0
-      Items.Strings = (
-        'Строка'
-        'Дробное число'
-        'Файл'
-      )
-      Style = csDropDownList
-      TabOrder = 5
-      Text = 'Строка'
-    end
     object Label4: TLabel
-      Left = -1
-      Height = 17
-      Top = 416
-      Width = 200
+      Left = 3
+      Height = 14
+      Top = 400
+      Width = 173
       Caption = 'Команды после параметров'
       ParentColor = False
     end
-    object Memo3: TMemo
-      Left = -2
-      Height = 120
-      Top = 432
-      Width = 174
-      TabOrder = 6
-    end
     object Label5: TLabel
       Left = 112
-      Height = 17
+      Height = 14
       Top = 28
-      Width = 223
+      Width = 195
       Caption = 'Потомок открывающихся тегов'
       ParentColor = False
     end
@@ -179,14 +172,14 @@ object Form1: TForm1
       Width = 136
       HorzScrollBar.Page = 4
       VertScrollBar.Page = 4
-      ClientHeight = 496
-      ClientWidth = 134
-      TabOrder = 7
+      ClientHeight = 494
+      ClientWidth = 132
+      TabOrder = 5
       object CheckGroup1: TCheckGroup
         Left = 0
-        Height = 496
+        Height = 494
         Top = 0
-        Width = 134
+        Width = 132
         Align = alClient
         AutoFill = False
         AutoSize = True
@@ -196,8 +189,84 @@ object Form1: TForm1
         ChildSizing.ShrinkVertical = crsScaleChilds
         ChildSizing.Layout = cclLeftToRightThenTopToBottom
         ChildSizing.ControlsPerLine = 1
+        OnChangeBounds = CheckGroup1ChangeBounds
         TabOrder = 0
       end
+    end
+    object Button4: TButton
+      Left = 152
+      Height = 23
+      Top = 184
+      Width = 24
+      Caption = '-'
+      OnClick = Button4Click
+      TabOrder = 6
+    end
+    object ComboBox2: TComboBox
+      Left = 53
+      Height = 19
+      Top = 240
+      Width = 116
+      ItemHeight = 0
+      ItemIndex = 2
+      Items.Strings = (
+        'Строка'
+        'Целое'
+        'Дробное'
+        'Файл'
+        'Вектор'
+      )
+      OnChange = ComboBox2Change
+      OnSelect = ComboBox2Select
+      Style = csDropDownList
+      TabOrder = 7
+      Text = 'Дробное'
+    end
+    object Memo3: TMemo
+      Left = 1
+      Height = 106
+      Top = 416
+      Width = 171
+      Lines.Strings = (
+        'UP'
+      )
+      TabOrder = 8
+    end
+    object Button5: TButton
+      Left = 2
+      Height = 25
+      Top = 208
+      Width = 30
+      Caption = 'pos'
+      OnClick = Button5Click
+      TabOrder = 9
+    end
+    object Button6: TButton
+      Left = 32
+      Height = 25
+      Top = 208
+      Width = 32
+      Caption = 'rot'
+      OnClick = Button6Click
+      TabOrder = 10
+    end
+    object Button7: TButton
+      Left = 64
+      Height = 25
+      Top = 208
+      Width = 32
+      Caption = 'dir'
+      OnClick = Button7Click
+      TabOrder = 11
+    end
+    object Button8: TButton
+      Left = 97
+      Height = 25
+      Top = 208
+      Width = 30
+      Caption = 'tex'
+      OnClick = Button8Click
+      TabOrder = 12
     end
   end
   object MainMenu1: TMainMenu
@@ -207,16 +276,23 @@ object Form1: TForm1
       Caption = 'Файл'
       object MenuItem2: TMenuItem
         Caption = 'Новый'
+        OnClick = MenuItem2Click
       end
       object MenuItem3: TMenuItem
         Caption = 'Открыть'
+        OnClick = MenuItem3Click
       end
       object MenuItem4: TMenuItem
         Caption = 'Сохранить'
+        OnClick = MenuItem4Click
       end
       object MenuItem5: TMenuItem
         Caption = 'Сохранить как'
       end
     end
+  end
+  object OpenDialog1: TOpenDialog
+    left = 137
+    top = 50
   end
 end

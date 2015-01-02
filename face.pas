@@ -79,14 +79,14 @@ begin
   for i := 1 to com.CreatorMM.Count do
   begin
     s := com.CreatorMM[i - 1];
-    ShowMessage(s);
+  //  ShowMessage(s);
     If  pos('*$',s)<>0 then
     begin
       n := copy(s, pos('$', s) + 1, length(s) - pos('$', s));
       Delete(s, pos('$', s) + 1, length(s) - pos('$', s));
       delete(s,length(s)-1,1);
       n := addfile(n);
-      if n = 'eror' then
+      if n = 'error' then
         Continue
       else
         Glrequre(s + n);

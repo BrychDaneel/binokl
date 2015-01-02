@@ -97,6 +97,31 @@ end;
 
 end;
 
+function CheckAllParam(s: string;tegId:longint;var index:integer): boolean;
+var q,i:integer;
+  teg:string;
+begin
+CheckAllParam := False;
+
+for i:=1 to teggi.par[tegId].Count do
+begin
+teg:=teggi.par[tegId][i-1];
+if (length(s) = length(teg)) then
+  if (copy(s, 1, length(teg)) = teg) then
+  begin
+    CheckAllParam  := True;
+    index:=i-1;
+  end;
+if length(s) > length(teg) then
+  if (copy(s, 1, length(teg)) = teg) and (s[length(teg) + 1] in del) then
+  begin
+    CheckAllParam  := True;
+    index:=i-1;
+  end;
+end;
+
+end;
+
 function DecodePage(filename: string): Tout;
 var
   i, ii, iii,iv: longint;
@@ -220,8 +245,8 @@ begin
         Dec(ii)
       else
       begin
-        if teggi.Find(teg,qq) then
-        If teggi.par[qq].Find(s,qqq) and (sost<>3) then
+        if CheckAllTeg(teg,qq) then
+        If CheckAllParam(s,qq,qqq) and (sost<>3) then
         begin
         param:=s;
         sost:=3;
@@ -291,7 +316,7 @@ begin
 
     if (sost >= 2) and (Text[i - 1][ii] = '>') then
     begin
-      if (teggi.Find(teg,qq)) then
+      if (CheckAllTeg(teg,qq)) then
       begin
         sost := 1;
         if (sp = teggi.needlevl[qq]) and (not teggi.open[qq]) and (not teggi.clos[qq]) then
@@ -304,7 +329,7 @@ begin
 
                    for iii := 1 to pr.Count do
                    begin
-                     If teggi.par[qq].Find(pr[iii - 1],qqq) then
+                     If CheckAllParam(pr[iii - 1],qq,qqq) then
                        begin
                        if teggi.typpar[qq][qqq]=2 then
                        try
@@ -410,10 +435,10 @@ begin
   teggi.paraforclos[teggi.Count-1]:=s;  //ПАРА для закр
   end;
   readln(t,q);
-  teggi.needlevl[teggi.Count-1]:=q; //пространство   space=0 world=2
+  teggi.needlevl[teggi.Count-1]:=q; //пространство   space=1 world=2
 
   readln(t,q);
-  teggi.postlevl[teggi.Count-1]:=q; //Постпространство   space=0 world=2
+  teggi.postlevl[teggi.Count-1]:=q; //Постпространство   space=1 world=2
 
   readln(t,nn);          //PRE
   for ii:=1 to nn do
